@@ -1,0 +1,23 @@
+{
+    "posts": [
+      { "id": 1, "title": "My First Article", "author": "Oleh", "date": "August 13, 2021", "category": "Design Tools" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Design Tools"
+        },
+        {
+            "id": 2,
+            "name": "Weekly Updates"
+        },
+        {
+            "id": 3,
+            "name": "Tutorials"
+        }
+    ],
+    "profile": { "name": "Oleh" }
+}
