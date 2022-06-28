@@ -18,7 +18,7 @@ export const HomePage = () => {
 
     return (
         <div className="home-page-container">
-            {sections.map(el => <Section title={el.title} items={el.posts} id={el.id} />)}
+            {sections.map(el => <Section key={el.title} title={el.title} items={el.posts} id={el.id} />)}
             <SubscribePanel />
         </div>
     );
