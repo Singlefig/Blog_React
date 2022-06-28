@@ -1,9 +1,111 @@
 {
-    "posts": [
-      { "id": 1, "title": "My First Article", "author": "Oleh", "date": "August 13, 2021", "category": "Design Tools" }
+    "sections": [
+        {
+            "title": "Design Tools",
+            "id": "design-tools",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL.png"
+                },
+                {
+                    "id": 2,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (1).png"
+                },
+                {
+                    "id": 3,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (2).png"
+                }
+            ]
+        },
+        {
+            "title": "Weekly Updates",
+            "id": "weekly-updates",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (3).png"
+                },
+                {
+                    "id": 2,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (4).png"
+                },
+                {
+                    "id": 3,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (5).png"
+                }
+            ]
+        },
+        {
+            "title": "Tutorials",
+            "id": "tutorials",
+            "posts": [
+                {
+                    "id": 1,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (6).png"
+                },
+                {
+                    "id": 2,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (7).png"
+                },
+                {
+                    "id": 3,
+                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+                    "author": "Oleh",
+                    "date": "August 13, 2021",
+                    "category": "Design Tools",
+                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+                    "image": "POST THUMBNAIL (8).png"
+                }
+            ]
+        }
     ],
     "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
+        {
+            "id": 1,
+            "body": "some comment",
+            "postId": 1
+        }
     ],
     "categories": [
         {
@@ -19,5 +121,7 @@
             "name": "Tutorials"
         }
     ],
-    "profile": { "name": "Oleh" }
+    "profile": {
+        "name": "Oleh"
+    }
 }
