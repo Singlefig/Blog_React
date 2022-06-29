@@ -60,3 +60,65 @@ header {
     font-size: 52px;
     font-weight: normal;
 }
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.category-title,
+.header-title {
+    width: fit-content;
+    padding: 8px 12px 10px;
+    border: #ffffff solid 1px;
+    text-transform: uppercase;
+    border-radius: 6px;
+}
+
+.header-title {
+    height: 42px;
+    padding: 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-category {
+    padding: 8px 12px 10px;
+    border: #ffffff solid 1px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.article-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: #232E52;
+    height: 42px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.article-date-text {
+    padding: 8px 12px 10px;
+}
+
+.arrow-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    background-color: #394363;
+    border-radius: 50%;
+    margin-right: 30px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.arrow-back:hover {
+    opacity: 1;
+}

@@ -5,7 +5,7 @@ import axios from "axios";
 import './HomePage.css';
 
 export const HomePage = () => {
-    const [sections, setSections] = useState<Array<{ title: string, posts: Array<{ category: string, date: string, title: string, description: string, image: string }>, id: string}>>([]);
+    const [sections, setSections] = useState<Array<{ title: string, posts: Array<{ category: string, date: string, title: string, description: string, image: string, id: string }>, id: string, headerDisplay: { name: string, label: string }}>>([]);
 
     useEffect(() => {
         const getPosts = async () => {
@@ -18,7 +18,7 @@ export const HomePage = () => {
 
     return (
         <div className="home-page-container">
-            {sections.map(el => <Section key={el.title} title={el.title} items={el.posts} id={el.id} />)}
+            {sections.map(el => <Section key={el.title} title={el.title} items={el.posts} id={el.id} headerDisplay={el.headerDisplay} />)}
             <SubscribePanel />
         </div>
     );

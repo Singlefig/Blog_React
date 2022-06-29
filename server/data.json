@@ -2,7 +2,11 @@
     "sections": [
         {
             "title": "Design Tools",
-            "id": "design-tools",
+            "id": 1,
+            "headerDisplay": {
+                "name": "design-tools",
+                "label": "Design Tools"
+            },
             "posts": [
                 {
                     "id": 1,
@@ -35,10 +39,14 @@
         },
         {
             "title": "Weekly Updates",
-            "id": "weekly-updates",
+            "id": 2,
+            "headerDisplay": {
+                "name": "weekly-updates",
+                "label": "Weekly Updates"
+            },
             "posts": [
                 {
-                    "id": 1,
+                    "id": 4,
                     "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
                     "author": "Oleh",
                     "date": "August 13, 2021",
@@ -47,7 +55,7 @@
                     "image": "POST THUMBNAIL (3).png"
                 },
                 {
-                    "id": 2,
+                    "id": 5,
                     "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
                     "author": "Oleh",
                     "date": "August 13, 2021",
@@ -56,7 +64,7 @@
                     "image": "POST THUMBNAIL (4).png"
                 },
                 {
-                    "id": 3,
+                    "id": 6,
                     "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
                     "author": "Oleh",
                     "date": "August 13, 2021",
@@ -68,10 +76,14 @@
         },
         {
             "title": "Tutorials",
-            "id": "tutorials",
+            "id": 3,
+            "headerDisplay": {
+                "name": "tutorials",
+                "label": "Tutorials"
+            },
             "posts": [
                 {
-                    "id": 1,
+                    "id": 7,
                     "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
                     "author": "Oleh",
                     "date": "August 13, 2021",
@@ -80,7 +92,7 @@
                     "image": "POST THUMBNAIL (6).png"
                 },
                 {
-                    "id": 2,
+                    "id": 8,
                     "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
                     "author": "Oleh",
                     "date": "August 13, 2021",
@@ -89,11 +101,11 @@
                     "image": "POST THUMBNAIL (7).png"
                 },
                 {
-                    "id": 3,
+                    "id": 9,
                     "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
                     "author": "Oleh",
                     "date": "August 13, 2021",
-                    "category": "Design Tools",
+                    "category": "Tutorials",
                     "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
                     "image": "POST THUMBNAIL (8).png"
                 }
@@ -123,5 +135,31 @@
     ],
     "profile": {
         "name": "Oleh"
-    }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "category": "Tutorials",
+            "date": "August 13, 2021",
+            "mainImage": "Rectangle 123.png",
+            "paragraphs": [
+                {
+                    "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.\nNot so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nThe toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread?"
+                },
+                {
+                    "text": "The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread? Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nDesign comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
+                },
+                {
+                    "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
+                },
+                {
+                    "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.\nThe toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread? Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nNot so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nDesign comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
+                }
+            ],
+            "secondaryImage": {
+                "image": "Rectangle 124.png",
+                "thumbnail": "Image caption or credit"
+            }
+        }
+    ]
 }

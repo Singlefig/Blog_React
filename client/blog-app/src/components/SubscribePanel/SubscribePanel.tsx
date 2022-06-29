@@ -6,7 +6,7 @@ import './SubscribePanel.css';
 export const SubscribePanel = () => {
     const [email, setEmail] = useState('');
     return (
-        <div className="subscribe-panel-container">
+        <div className="subscribe-panel-container" id="subscribe">
             <img src={subImg} alt="sub" width={105} height={102} />
             <p className="subscribe-title">
                 Subscribe to my blog.
