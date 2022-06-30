@@ -1,0 +1,48 @@
+.library-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 255px;
+}
+
+.title,
+.year {
+    color: #232E52;
+    font-size: 36px;
+}
+
+.title {
+    margin: 0;
+}
+
+.year {
+    font-size: 16px;
+    margin: 40px 0;
+}
+
+.library-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.library-section img {
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.library-section img:last-of-type {
+    margin-right: 0;
+}
+
+.books {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1010px;
+}

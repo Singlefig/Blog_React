@@ -5,6 +5,7 @@ import { Article } from "../../components/Article";
 import { Circles } from "react-loader-spinner";
 import './ArticlePage.css';
 import { Section } from "../../components/Section";
+import { SubscribePanel } from "../../components/SubscribePanel";
 
 export const ArticlePage = () => {
     const [article, setArticle] = useState<{ mainImage: string, paragraphs: Array<{ text: string }>, secondaryImage: { image: string, thumbnail: string } }>({
@@ -52,6 +53,7 @@ export const ArticlePage = () => {
                     ariaLabel='loading'
                 />}
             <Section title="Other interesting posts" items={additionalSection.posts} />
+            <SubscribePanel />
         </div>
     );
 };

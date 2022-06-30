@@ -10,17 +10,26 @@ export const CategoryPage = () => {
     const [articles, setArticles] = useState([]);
     const [pageTitle, setPageTitle] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
+    const [isMoreArticles, setIsMoreArticles] = useState(true);
 
     useEffect(() => {
         const id = searchParams.get('id');
         const getArticles = async () => {
             const res = await axios.get(`http://localhost:4000/sections/${id}`);
-            setArticles(res.data?.posts);
+            setIsMoreArticles(res.data.posts.length > 3);
+            setArticles(res.data?.posts.slice(0,3));
             setPageTitle(res.data?.title);
         };
 
         getArticles();
     }, []);
+
+    const getMoreArticles = async () => {
+        const id = searchParams.get('id');
+        const res = await axios.get(`http://localhost:4000/sections/${id}`);
+        setArticles(res.data?.posts);
+        setIsMoreArticles(false);
+    };
 
     return (
         <div className="category-page-container">
@@ -29,8 +38,8 @@ export const CategoryPage = () => {
                 fillColor="#EBF2FE"
                 textColor="#232E52"
                 text="More articles"
-                disabled={false}
-                onClick={() => alert('Loading!')}
+                disabled={!isMoreArticles}
+                onClick={getMoreArticles}
                 width="fit-content"
                 height="fit-content"
             />
