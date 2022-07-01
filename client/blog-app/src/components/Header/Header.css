@@ -122,3 +122,13 @@ header {
 .arrow-back:hover {
     opacity: 1;
 }
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.account-logo {
+    cursor: pointer;
+}

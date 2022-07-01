@@ -6,7 +6,7 @@ type ButtonProps = {
     textColor: string,
     text: string,
     onClick: React.MouseEventHandler<HTMLButtonElement>,
-    disabled: boolean,
+    disabled?: boolean,
     width: number | string,
     height: number | string,
 }

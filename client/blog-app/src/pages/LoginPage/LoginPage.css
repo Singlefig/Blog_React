@@ -1,0 +1,124 @@
+.login-page-container,
+.login-form,
+.register-form,
+.login-container,
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 255px;
+    font-family: 'Avenir';
+}
+
+.login-page-container {
+    flex-direction: row;
+    column-gap: 100px;
+    align-items: flex-start;
+}
+
+.login-container,
+.register-container {
+    padding: 0;
+    width: 500px;
+}
+
+.login-form,
+.register-form {
+    align-items: center;
+    width: 100%;
+    padding: 60px 20px;
+    row-gap: 10px;
+    border: #232E52 solid 1px;
+    border-radius: 8px;
+}
+
+.login-title,
+.register-title {
+    color: #232E52;
+    font-size: 36px;
+    margin: 0;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 4px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 16px;
+    margin: 20px 0;
+}
+
+.login-form .inputs {
+    margin-bottom: 0;
+}
+
+.login-btn {
+    margin-top: 20px;
+}
+
+.login-input,
+.login-btn,
+.register-input,
+.register-btn {
+    width: 440px;
+    color: #232E52;
+    background-color: white;
+    border: #232E52 solid 1px;
+    border-radius: 20px;
+    height: 60px;
+    padding-left: 21px;
+    font-size: 16px;
+    opacity: 0.7;
+    box-sizing: border-box;
+}
+
+.login-btn,
+.register-btn {
+    padding: 0;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 1;
+    background-color: #232E52;
+    color: white;
+}
+
+.login-btn:hover,
+.register-btn:hover,
+.login-input:hover,
+.register-input:hover {
+    opacity: 0.7;
+}
+
+.disabled-btn {
+    cursor: not-allowed;
+}
+
+.sign-up-flow {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    width: 440px;
+    padding: 10px;
+    background-color: #8198ec;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.sign-up-flow p {
+    margin: 0;
+}
+
+.error-login {
+    color: red;
+}

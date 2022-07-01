@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Link, useSearchParams, useLocation, useNavigate } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
 import axios from "axios";
 import './Header.css';
 import logo from '../../assets/images/logo.png';
+import accountLogo from '../../assets/icons/account.svg';
 import { Image } from "../Image";
 import { Button } from "../Button";
 
-export const Header = () => {
+
+const Header = () => {
+    const { isLoggedIn } = useSelector((state: { isLoggedIn: boolean }) => state);
     const [searchParams, setSearchParams] = useSearchParams();
     const [headerTitle, setHeaderTitle] = useState('👋 HELLO');
     const [headerDate, setHeaderDate] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
     const handleOnSubscribeButtonClick = () => document.getElementById('subscribe')?.scrollIntoView({ behavior: 'smooth' });
+    const handleOnLoginButtonClick = () => document.getElementById('login')?.scrollIntoView({ behavior: 'smooth' });
 
     useEffect(() => {
         const id = searchParams.get('id');
@@ -29,13 +34,10 @@ export const Header = () => {
         };
 
         if (location.pathname.includes('category')) {
-            console.log('A');
             getCategoryHeaderTitle();
         } else if (location.pathname.includes('article')) {
-            console.log('B');
             getArticleHeaderTitle();
         } else {
-            console.log('C');
             setHeaderTitle('👋 HELLO');
             setHeaderDate('');
         }
@@ -58,15 +60,32 @@ export const Header = () => {
                     <a className="anchor" href="#tutorials">Tutorials</a>
                     <Link className="anchor" to="/library">Library</Link>
                 </div>
-                <Button
-                    fillColor="#3a4362"
-                    textColor="#ffffff"
-                    text="Subscribe"
-                    onClick={handleOnSubscribeButtonClick}
-                    disabled={false}
-                    width="108px"
-                    height="36px"
-                />
+                <div className="header-buttons">
+                    {isLoggedIn ? (
+                        <img className="account-logo" src={accountLogo} width={36} height={36} alt="account" />
+                    ) : (
+                        <Link to='/login'>
+                        <Button
+                            fillColor="#3a4362"
+                            textColor="#ffffff"
+                            text="Login"
+                            onClick={handleOnLoginButtonClick}
+                            width="108px"
+                            height="36px"
+                        />
+                    </Link>
+                    )}
+                    
+                    <Button
+                        fillColor="#3a4362"
+                        textColor="#ffffff"
+                        text="Subscribe"
+                        onClick={handleOnSubscribeButtonClick}
+                        disabled={false}
+                        width="108px"
+                        height="36px"
+                    />
+                </div>
             </div>
             <div className="bottom-content-header">
                 {location.pathname.includes('article') ? (
@@ -90,3 +109,11 @@ export const Header = () => {
         </header>
     );
 };
+
+const mapStateToProps = (state: any) => {
+    return {
+        isLoggedIn: state.isLoggedIn,
+    };
+};
+
+export default connect()(Header);

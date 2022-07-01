@@ -151,9 +151,14 @@
             "name": "Tutorials"
         }
     ],
-    "profile": {
-        "name": "Oleh"
-    },
+    "profiles": [
+        {
+            "name": "Oleh",
+            "surname": "Kriuchenkov",
+            "email": "kruchenkovoleh80@gmail.com",
+            "password": "1234rewq"
+        }
+    ],
     "articles": [
         {
             "id": 1,
