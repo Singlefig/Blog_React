@@ -13,6 +13,7 @@ const LoginPage = () => {
     const [surname, setSurname] = useState('');
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
+    const [registerRepeatPassword, setRegisterRepeatPassword] = useState('');
 
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
@@ -59,32 +60,61 @@ const LoginPage = () => {
 
     };
 
+    const handleOnRegisterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const users = await axios.get(`http://localhost:4000/profiles`);
+        const isEmailFree = users.data.every((el: { email: string }) => el.email !== registerEmail);
+        const lastUserId = users.data[users.data.length - 1].id;
+        if (isEmailFree) {
+            const res = await axios.post(`http://localhost:4000/profiles`, {
+                id: +lastUserId + 1,
+                name: name,
+                surname: surname,
+                email: registerEmail,
+                password: registerPassword,
+            });
+            if (res.status === 200) {
+                dispatch({
+                    type: 'login',
+                    payload: {
+                        email: registerEmail,
+                        password: registerPassword,
+                        name: name,
+                        surname: surname,
+                        isLoggedIn: true
+                    }
+                });
+                navigate('/');
+            }
+        }
+    };
+
     return (
         <div id="login" className="login-page-container">
             <div className="login-container">
                 <form className="login-form" onSubmit={handleOnLoginSubmit}>
                     <p className="login-title">Hi! Please login :)</p>
                     <div className="inputs-container">
-                    <div className="inputs">
-                        <input
-                            className="login-input"
-                            type={"email"}
-                            placeholder="Email"
-                            required
-                            value={loginEmail}
-                            onChange={(e) => setLoginEmail(e.target.value)}
-                        />
-                        <input
-                            className="login-input"
-                            type={"password"}
-                            placeholder="Password"
-                            required
-                            value={loginPassword}
-                            min={8}
-                            onChange={(e) => setLoginPassword(e.target.value)}
-                        />
-                    </div>
-                    {!isCredentialsValid ? <span className="error-login">Wrong email or password. Please try again</span> : null}
+                        <div className="inputs">
+                            <input
+                                className="login-input"
+                                type={"email"}
+                                placeholder="Email *"
+                                required
+                                value={loginEmail}
+                                onChange={(e) => setLoginEmail(e.target.value)}
+                            />
+                            <input
+                                className="login-input"
+                                type={"password"}
+                                placeholder="Password *"
+                                required
+                                value={loginPassword}
+                                min={8}
+                                onChange={(e) => setLoginPassword(e.target.value)}
+                            />
+                        </div>
+                        {!isCredentialsValid ? <span className="error-login">Wrong email or password. Please try again</span> : null}
                     </div>
                     <button
                         className={isLoginSubmitDisabled ? 'login-btn disabled-btn' : 'login-btn'}
@@ -100,13 +130,13 @@ const LoginPage = () => {
                 </form>
             </div>
             <div className="register-container">
-                <form className="register-form">
+                <form className="register-form" onSubmit={handleOnRegisterSubmit}>
                     <p className="register-title">Sign Up</p>
                     <div className="inputs">
                         <input
                             className="register-input"
                             type={"text"}
-                            placeholder="Name"
+                            placeholder="Name *"
                             required
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -114,7 +144,7 @@ const LoginPage = () => {
                         <input
                             className="register-input"
                             type={"text"}
-                            placeholder="Surname"
+                            placeholder="Surname *"
                             required
                             value={surname}
                             onChange={(e) => setSurname(e.target.value)}
@@ -122,7 +152,7 @@ const LoginPage = () => {
                         <input
                             className="register-input"
                             type={"email"}
-                            placeholder="Email"
+                            placeholder="Email *"
                             required
                             value={registerEmail}
                             onChange={(e) => setRegisterEmail(e.target.value)}
@@ -130,11 +160,20 @@ const LoginPage = () => {
                         <input
                             className="register-input"
                             type={"password"}
-                            placeholder="Password"
+                            placeholder="Password *"
                             required
                             value={registerPassword}
                             min={8}
                             onChange={(e) => setRegisterPassword(e.target.value)}
+                        />
+                        <input
+                            className="register-input"
+                            type={"password"}
+                            placeholder="Repeat password *"
+                            required
+                            value={registerRepeatPassword}
+                            min={8}
+                            onChange={(e) => setRegisterRepeatPassword(e.target.value)}
                         />
                     </div>
                     <button

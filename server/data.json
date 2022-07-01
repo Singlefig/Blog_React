@@ -1,228 +1,236 @@
 {
-    "sections": [
+  "sections": [
+    {
+      "title": "Design Tools",
+      "id": 1,
+      "headerDisplay": {
+        "name": "design-tools",
+        "label": "Design Tools"
+      },
+      "posts": [
         {
-            "title": "Design Tools",
-            "id": 1,
-            "headerDisplay": {
-                "name": "design-tools",
-                "label": "Design Tools"
-            },
-            "posts": [
-                {
-                    "id": 1,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL.png"
-                },
-                {
-                    "id": 2,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (1).png"
-                },
-                {
-                    "id": 3,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (2).png"
-                }
-            ]
+          "id": 1,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL.png"
         },
         {
-            "title": "Weekly Updates",
-            "id": 2,
-            "headerDisplay": {
-                "name": "weekly-updates",
-                "label": "Weekly Updates"
-            },
-            "posts": [
-                {
-                    "id": 4,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (3).png"
-                },
-                {
-                    "id": 5,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (4).png"
-                },
-                {
-                    "id": 6,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (5).png"
-                },
-                {
-                    "id": 10,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (5).png"
-                },
-                {
-                    "id": 11,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (5).png"
-                }
-            ]
+          "id": 2,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (1).png"
         },
         {
-            "title": "Tutorials",
-            "id": 3,
-            "headerDisplay": {
-                "name": "tutorials",
-                "label": "Tutorials"
-            },
-            "posts": [
-                {
-                    "id": 7,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (6).png"
-                },
-                {
-                    "id": 8,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Design Tools",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (7).png"
-                },
-                {
-                    "id": 9,
-                    "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
-                    "author": "Oleh",
-                    "date": "August 13, 2021",
-                    "category": "Tutorials",
-                    "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
-                    "image": "POST THUMBNAIL (8).png"
-                }
-            ]
+          "id": 3,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (2).png"
         }
-    ],
-    "comments": [
+      ]
+    },
+    {
+      "title": "Weekly Updates",
+      "id": 2,
+      "headerDisplay": {
+        "name": "weekly-updates",
+        "label": "Weekly Updates"
+      },
+      "posts": [
         {
-            "id": 1,
-            "body": "some comment",
-            "postId": 1
-        }
-    ],
-    "categories": [
-        {
-            "id": 1,
-            "name": "Design Tools"
+          "id": 4,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (3).png"
         },
         {
-            "id": 2,
-            "name": "Weekly Updates"
+          "id": 5,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (4).png"
         },
         {
-            "id": 3,
-            "name": "Tutorials"
-        }
-    ],
-    "profiles": [
-        {
-            "name": "Oleh",
-            "surname": "Kriuchenkov",
-            "email": "kruchenkovoleh80@gmail.com",
-            "password": "1234rewq"
-        }
-    ],
-    "articles": [
-        {
-            "id": 1,
-            "category": "Tutorials",
-            "date": "August 13, 2021",
-            "mainImage": "Rectangle 123.png",
-            "paragraphs": [
-                {
-                    "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.\nNot so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nThe toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread?"
-                },
-                {
-                    "text": "The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread? Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nDesign comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
-                },
-                {
-                    "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
-                },
-                {
-                    "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.\nThe toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread? Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nNot so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nDesign comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
-                }
-            ],
-            "secondaryImage": {
-                "image": "Rectangle 124.png",
-                "thumbnail": "Image caption or credit"
-            }
-        }
-    ],
-    "library": [
-        {
-            "year": "2017",
-            "books": [
-                "image 12.png",
-                "image 13.png",
-                "image 14.png",
-                "image 15.png",
-                "image 16.png",
-                "image 17.png",
-                "image 18.png"
-            ]
+          "id": 6,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (5).png"
         },
         {
-            "year": "2018",
-            "books": [
-                "image 9.png",
-                "image 10.png",
-                "image 11.png"
-            ]
+          "id": 10,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (5).png"
         },
         {
-            "year": "2019",
-            "books": [
-                "image 5.png",
-                "image 6.png",
-                "image 7.png",
-                "image 8.png"
-            ]
-        },
-        {
-            "year": "2020",
-            "books": [
-                "image 1.png",
-                "image 2.png",
-                "image 3.png",
-                "image 4.png"
-            ]
+          "id": 11,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (5).png"
         }
-    ]
+      ]
+    },
+    {
+      "title": "Tutorials",
+      "id": 3,
+      "headerDisplay": {
+        "name": "tutorials",
+        "label": "Tutorials"
+      },
+      "posts": [
+        {
+          "id": 7,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (6).png"
+        },
+        {
+          "id": 8,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Design Tools",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (7).png"
+        },
+        {
+          "id": 9,
+          "title": "10 Hilarious Cartoons That Depict Real-Life Problems of Programmers",
+          "author": "Oleh",
+          "date": "August 13, 2021",
+          "category": "Tutorials",
+          "description": "Redefined the user acquisition and redesigned the onboarding experience, all within 3 working weeks.",
+          "image": "POST THUMBNAIL (8).png"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Design Tools"
+    },
+    {
+      "id": 2,
+      "name": "Weekly Updates"
+    },
+    {
+      "id": 3,
+      "name": "Tutorials"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 0,
+      "name": "Oleh",
+      "surname": "Kriuchenkov",
+      "email": "kruchenkovoleh80@gmail.com",
+      "password": "1234rewq"
+    },
+    {
+      "id": 1,
+      "name": "Test",
+      "surname": "Test Surname",
+      "email": "test@test.com",
+      "password": "12345678"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "category": "Tutorials",
+      "date": "August 13, 2021",
+      "mainImage": "Rectangle 123.png",
+      "paragraphs": [
+        {
+          "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.\nNot so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nThe toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread?"
+        },
+        {
+          "text": "The toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread? Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nDesign comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
+        },
+        {
+          "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
+        },
+        {
+          "text": "Design comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever.\nThe toppings you may chose for that TV dinner pizza slice when you forgot to shop for foods, the paint you may slap on your face to impress the new boss is your business. But what about your daily bread? Not so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nNot so fast, I'd say, there are some redeeming factors in favor of greeking text, as its use is merely the symptom of a worse problem to take into consideration.\nDesign comps, layouts, wireframes—will your clients accept that you go about things the facile way? Authorities in our business will tell in no uncertain terms that Lorem Ipsum is that huge, huge no no to forswear forever."
+        }
+      ],
+      "secondaryImage": {
+        "image": "Rectangle 124.png",
+        "thumbnail": "Image caption or credit"
+      }
+    }
+  ],
+  "library": [
+    {
+      "year": "2017",
+      "books": [
+        "image 12.png",
+        "image 13.png",
+        "image 14.png",
+        "image 15.png",
+        "image 16.png",
+        "image 17.png",
+        "image 18.png"
+      ]
+    },
+    {
+      "year": "2018",
+      "books": [
+        "image 9.png",
+        "image 10.png",
+        "image 11.png"
+      ]
+    },
+    {
+      "year": "2019",
+      "books": [
+        "image 5.png",
+        "image 6.png",
+        "image 7.png",
+        "image 8.png"
+      ]
+    },
+    {
+      "year": "2020",
+      "books": [
+        "image 1.png",
+        "image 2.png",
+        "image 3.png",
+        "image 4.png"
+      ]
+    }
+  ]
 }
