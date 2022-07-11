@@ -25,7 +25,7 @@ const LoginPage = () => {
         if (isLoggedIn) {
             navigate('/');
         }
-    }, []);
+    }, [isLoggedIn]);
 
     useEffect(() => {
         if (loginEmail.length > 0 && loginPassword.length >= 8) {

@@ -9,9 +9,11 @@ import { LibraryPage } from './pages/LibraryPage/LibraryPage';
 import { CategoryPage } from './pages/CategoryPage/CategoryPage';
 import { ArticlePage } from './pages/ArticlePage/ArticlePage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import AccountPage from './pages/AccountPage/AccountPage';
+import MyArticlesPage from './pages/MyArticlesPage/MyArticlesPage';
 import store from './stores/userStore';
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
     <div className="App">
@@ -23,6 +25,8 @@ function App() {
           <Route path='/category' element={<CategoryPage />} />
           <Route path='/article' element={<ArticlePage />} />
           <Route path='/library' element={<LibraryPage />} />
+          <Route path='/my-account' element={<AccountPage />} />
+          <Route path='/my-articles' element={<MyArticlesPage />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,0 +1,87 @@
+.logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-logo {
+    cursor: pointer;
+}
+
+.user-dropdown,
+.user-dropdown-original {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 48px;
+    right: -52px;
+    width: 120px;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.user-dropdown p,
+.user-dropdown-original p {
+    text-align: center;
+    margin: 0;
+    background-color: white;
+    padding: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.user-dropdown p {
+    background-color: #232E52;
+    color: white;
+}
+
+.user-dropdown a,
+.user-dropdown-original a {
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.user-dropdown::before,
+.user-dropdown-original::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 58px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #232E52;
+}
+
+.user-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 58px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+}
+
+.user-dropdown-original {
+    top: 60px;
+    background-color: #232E52;
+}
+
+.user-dropdown a:last-child,
+.user-dropdown-original a:last-child {
+    margin-bottom: 0;
+}
+
+.user-dropdown p:hover,
+.user-dropdown-original p:hover {
+    background-color: #394363;
+    color: white;
+}
+
+.user-dropdown-hidden {
+    display: none;
+}
