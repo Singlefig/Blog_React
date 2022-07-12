@@ -10,10 +10,6 @@ const AccountPage = () => {
     const [lastName, setLastName] = useState(userInfo.data[0].surname);
     const [email, setEmail] = useState(userInfo.data[0].email);
 
-    useEffect(() => {
-        console.log(userInfo);
-    }, [userInfo]);
-
     return (
         <div className="account-page-container">
             <form>
