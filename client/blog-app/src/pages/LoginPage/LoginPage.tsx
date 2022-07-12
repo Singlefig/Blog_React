@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import { Input } from "../../components/Input";
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -51,7 +52,7 @@ const LoginPage = () => {
         if (isValid) {
             dispatch({
                 type: 'login',
-                payload: { ...res.data, isLoggedIn: true }
+                payload: { data: { ...res.data }, isLoggedIn: true }
             });
             navigate('/');
         }
@@ -96,19 +97,17 @@ const LoginPage = () => {
                     <p className="login-title">Hi! Please login :)</p>
                     <div className="inputs-container">
                         <div className="inputs">
-                            <input
-                                className="login-input"
-                                type={"email"}
+                            <Input
+                                type="email"
                                 placeholder="Email *"
-                                required
+                                isRequired
                                 value={loginEmail}
                                 onChange={(e) => setLoginEmail(e.target.value)}
                             />
-                            <input
-                                className="login-input"
+                            <Input
                                 type={"password"}
                                 placeholder="Password *"
-                                required
+                                isRequired
                                 value={loginPassword}
                                 min={8}
                                 onChange={(e) => setLoginPassword(e.target.value)}
@@ -133,44 +132,39 @@ const LoginPage = () => {
                 <form className="register-form" onSubmit={handleOnRegisterSubmit}>
                     <p className="register-title">Sign Up</p>
                     <div className="inputs">
-                        <input
-                            className="register-input"
-                            type={"text"}
+                        <Input
+                            type="text"
                             placeholder="Name *"
-                            required
+                            isRequired
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
-                        <input
-                            className="register-input"
-                            type={"text"}
+                        <Input
+                            type="text"
                             placeholder="Surname *"
-                            required
+                            isRequired
                             value={surname}
                             onChange={(e) => setSurname(e.target.value)}
                         />
-                        <input
-                            className="register-input"
-                            type={"email"}
+                        <Input
+                            type="email"
                             placeholder="Email *"
-                            required
+                            isRequired
                             value={registerEmail}
                             onChange={(e) => setRegisterEmail(e.target.value)}
                         />
-                        <input
-                            className="register-input"
-                            type={"password"}
+                        <Input
+                            type="password"
                             placeholder="Password *"
-                            required
+                            isRequired
                             value={registerPassword}
                             min={8}
                             onChange={(e) => setRegisterPassword(e.target.value)}
                         />
-                        <input
-                            className="register-input"
-                            type={"password"}
+                        <Input
+                            type="password"
                             placeholder="Repeat password *"
-                            required
+                            isRequired
                             value={registerRepeatPassword}
                             min={8}
                             onChange={(e) => setRegisterRepeatPassword(e.target.value)}

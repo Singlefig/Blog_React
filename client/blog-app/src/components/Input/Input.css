@@ -1,0 +1,16 @@
+.input {
+    width: 440px;
+    color: #232E52;
+    background-color: white;
+    border: #232E52 solid 1px;
+    border-radius: 20px;
+    height: 60px;
+    padding-left: 21px;
+    font-size: 16px;
+    opacity: 0.7;
+    box-sizing: border-box;
+}
+
+.input:hover {
+    opacity: 1;
+}

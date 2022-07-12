@@ -65,9 +65,7 @@
     margin-top: 20px;
 }
 
-.login-input,
 .login-btn,
-.register-input,
 .register-btn {
     width: 440px;
     color: #232E52;
@@ -92,9 +90,7 @@
 }
 
 .login-btn:hover,
-.register-btn:hover,
-.login-input:hover,
-.register-input:hover {
+.register-btn:hover {
     opacity: 0.7;
 }
 

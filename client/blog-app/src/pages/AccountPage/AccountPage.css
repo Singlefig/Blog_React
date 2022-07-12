@@ -1,0 +1,58 @@
+.account-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 255px;
+}
+
+.account-page-container form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 20px;
+    row-gap: 10px;
+}
+
+.account-page-container form fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #232E52 solid 1px;
+    border-radius: 10px;
+    padding: 50px;
+    font-size: 18px;
+    row-gap: 16px;
+}
+
+.account-page-container form fieldset button {
+    width: 440px;
+    color: #232E52;
+    background-color: white;
+    border: #232E52 solid 1px;
+    border-radius: 20px;
+    height: 60px;
+    padding-left: 21px;
+    font-size: 16px;
+    opacity: 0.7;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.account-page-container form fieldset button:hover {
+    opacity: 1;
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.field label {
+    width: 100px;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
