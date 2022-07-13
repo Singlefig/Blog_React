@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 import axios from "axios";
 import { Input } from "../../components/Input";
 import './LoginPage.css';
@@ -54,7 +55,26 @@ const LoginPage = () => {
                 type: 'login',
                 payload: { data: { ...res.data }, isLoggedIn: true }
             });
+
+            toast.success('Successful login', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+
             navigate('/');
+        } else {
+            toast.error('Wrong email or password. Please try again', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
         }
         setLoginEmail('');
         setLoginPassword('');
@@ -85,8 +105,27 @@ const LoginPage = () => {
                         isLoggedIn: true
                     }
                 });
+
+                toast.success('Successful sign up', {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
+
                 navigate('/');
             }
+        } else {
+            toast.error('Current email is signed for existing account. Please try login or use another email', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
         }
     };
 
