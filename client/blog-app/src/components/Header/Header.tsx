@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { connect, useSelector } from "react-redux";
 import axios from "axios";
@@ -11,6 +11,7 @@ import { UserInfo } from "../LoginInfo/UserInfo";
 
 const Header = () => {
     const { data: { isLoggedIn } } = useSelector((state: { data: { isLoggedIn: boolean } }) => state);
+    // eslint-disable-next-line
     const [searchParams, setSearchParams] = useSearchParams();
     const [headerTitle, setHeaderTitle] = useState('👋 HELLO');
     const [headerDate, setHeaderDate] = useState('');
