@@ -53,7 +53,7 @@ const LoginPage = () => {
         if (isValid) {
             dispatch({
                 type: 'login',
-                payload: { data: { ...res.data }, isLoggedIn: true }
+                payload: { data: { ...res.data, isLoggedIn: true } }
             });
 
             toast.success('Successful login', {

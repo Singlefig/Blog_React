@@ -1,5 +1,6 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 import { toast } from 'react-toastify';
 import axios from "axios";
 import { Input } from "../../components/Input";
@@ -7,10 +8,18 @@ import { Input } from "../../components/Input";
 import './AccountPage.css';
 
 const AccountPage = () => {
-    const userInfo = useSelector((state: { data: Array<{ name: string, surname: string, email: string, id: string | number }> }) => state);
-    const [firstName, setFirstName] = useState(userInfo.data[0].name);
-    const [lastName, setLastName] = useState(userInfo.data[0].surname);
-    const [email, setEmail] = useState(userInfo.data[0].email);
+    const userInfo = useSelector((state: { data: any }) => state);
+    const [firstName, setFirstName] = useState(userInfo && userInfo.data[0].name);
+    const [lastName, setLastName] = useState(userInfo && userInfo.data[0].surname);
+    const [email, setEmail] = useState(userInfo && userInfo.data[0].email);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        console.log(userInfo);
+        if (userInfo && !userInfo.data.isLoggedIn) {
+            navigate('/login');
+        }
+    }, []);
 
     const saveNewInfo = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();

@@ -1,14 +1,14 @@
 import React, { MouseEventHandler, useState } from "react";
+import { useNavigate } from "react-router";
 import dateIcon from '../../assets/icons/date.svg';
 import moreIcon from '../../assets/icons/more-vertical.svg';
 import categoryIcon from '../../assets/icons/category.svg';
 
 import './PreviewArticle.css';
 
-export const PreviewArticle = ({ deleteArticle, category, date }: { deleteArticle: MouseEventHandler<HTMLParagraphElement>, category: string, date: string }) => {
+export const PreviewArticle = ({ deleteArticle, category, date, id }: { deleteArticle: MouseEventHandler<HTMLParagraphElement>, category: string, date: string, id: string }) => {
     const [isMenuDisplayed, setIsMenuDisplayed] = useState(false);
-
-    
+    const navigate = useNavigate();
 
     return (
         <div className="preview-article-container">
@@ -33,7 +33,12 @@ export const PreviewArticle = ({ deleteArticle, category, date }: { deleteArticl
                 />
                 {isMenuDisplayed ? (
                     <div className="more-menu">
-                        <p className="more-menu-item">Edit</p>
+                        <p
+                        className="more-menu-item"
+                        onClick={() => navigate(`/add-new-article?articleId=${id}`)}
+                        >
+                            Edit
+                        </p>
                         <p
                             className="more-menu-item"
                             onClick={deleteArticle}

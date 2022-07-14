@@ -8,3 +8,15 @@
 .article-page-container .subscribe-panel-container {
     margin-bottom: 120px;
 }
+
+.article-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.article-container .paragraph {
+    max-width: 1000px;
+}

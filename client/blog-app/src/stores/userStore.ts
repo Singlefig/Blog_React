@@ -4,9 +4,15 @@ import { userReducer } from "../reducers/userReducer";
 const store = configureStore({
     reducer: userReducer,
     preloadedState: {
-        email: '',
-        password: '',
-        isLoggedIn: false,
+        data: [
+            {
+                name: '',
+                surname: '',
+                email: '',
+                password: '',
+                isLoggedIn: false,
+            },
+        ],
     },
 });
 

@@ -10,7 +10,7 @@ import { UserInfo } from "../LoginInfo/UserInfo";
 
 
 const Header = () => {
-    const { isLoggedIn } = useSelector((state: { isLoggedIn: boolean }) => state);
+    const { data: { isLoggedIn } } = useSelector((state: { data: { isLoggedIn: boolean } }) => state);
     const [searchParams, setSearchParams] = useSearchParams();
     const [headerTitle, setHeaderTitle] = useState('👋 HELLO');
     const [headerDate, setHeaderDate] = useState('');
@@ -50,7 +50,7 @@ const Header = () => {
 
 
     return (
-        <header className={`${location.pathname.includes('my') ? 'minimal-header' : ''}`}>
+        <header className={`${location.pathname.includes('my') || location.pathname.includes('add') ? 'minimal-header' : ''}`}>
             <div className="top-content-header">
                 <Link to="/">
                     <Image path={logo} alt="logo" width={100} height={18} />
@@ -87,7 +87,7 @@ const Header = () => {
                     />
                 </div>
             </div>
-            {!location.pathname.includes('my') ? (
+            {!location.pathname.includes('my') && !location.pathname.includes('add') ? (
                 <div className="bottom-content-header">
                     {location.pathname.includes('article') ? (
                         <div className="controls">
