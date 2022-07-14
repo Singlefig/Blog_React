@@ -12,6 +12,7 @@ import { ArticlePage } from './pages/ArticlePage/ArticlePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import AccountPage from './pages/AccountPage/AccountPage';
 import MyArticlesPage from './pages/MyArticlesPage/MyArticlesPage';
+import { AddNewArticlePage } from './pages/AddNewArticlePage/AddNewArticlePage';
 import store from './stores/userStore';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -42,6 +43,7 @@ const App = () => {
             <Route path='/library' element={<LibraryPage />} />
             <Route path='/my-account' element={<AccountPage />} />
             <Route path='/my-articles' element={<MyArticlesPage />} />
+            <Route path='/add-new-article' element={<AddNewArticlePage />} />
           </Routes>
           <Footer />
         </Router>

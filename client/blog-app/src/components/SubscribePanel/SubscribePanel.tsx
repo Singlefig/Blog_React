@@ -14,7 +14,7 @@ export const SubscribePanel = () => {
             <p className="subscribe-info">
                 I post fresh content every week.
             </p>
-            <div>
+            <div className="subscribe-panel-inputs">
                 <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

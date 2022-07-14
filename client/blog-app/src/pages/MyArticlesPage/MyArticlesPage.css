@@ -13,8 +13,9 @@
 
 .content-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .content-title {
@@ -28,4 +29,11 @@
     row-gap: 20px;
     flex-wrap: wrap;
     margin-bottom: 20px;
+}
+
+.add-article-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }

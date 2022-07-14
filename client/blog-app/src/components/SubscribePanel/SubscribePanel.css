@@ -41,3 +41,7 @@
 .subscribe-info {
     font-size: 18px;
 }
+
+.subscribe-panel-inputs {
+    display: flex;
+}
