@@ -109,10 +109,6 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
         }
     };
 
-    useEffect(() => {
-        console.log(image);
-    }, [image]);
-
     switch (data.type) {
         case 'main picture': {
             let component = null;

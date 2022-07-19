@@ -12,6 +12,30 @@
     height: 100%;
 }
 
+.article-category-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 780px;
+    column-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.article-category-container .btn {
+    position: absolute;
+    right: 90px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    font-size: 20px;
+}
+
+.article-category-container label {
+    font-size: 20px;
+}
+
 .add-section-container {
     display: flex;
     align-items: center;
