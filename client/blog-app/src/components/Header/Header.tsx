@@ -64,7 +64,7 @@ const Header = () => {
                 </div>
                 <div className="header-buttons">
                     {isLoggedIn ? (
-                       <UserInfo isOriginalHeader={location.pathname.includes('my')} />
+                       <UserInfo isOriginalHeader={location.pathname.includes('my') || location.pathname.includes('add')} />
                     ) : (
                         <Link to='/login'>
                             <Button

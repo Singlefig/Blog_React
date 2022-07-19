@@ -38,7 +38,7 @@
 }
 
 .note {
-    max-width: 780px;
+    width: 780px;
     background-color: #EBF2FE;
     border-top: #1D54C0 solid 4px;
     border-radius: 8px;

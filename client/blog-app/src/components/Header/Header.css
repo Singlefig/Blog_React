@@ -68,6 +68,7 @@ header {
 .bottom-content-header h2 {
     font-size: 52px;
     font-weight: normal;
+    width: 100%;
 }
 
 .controls {

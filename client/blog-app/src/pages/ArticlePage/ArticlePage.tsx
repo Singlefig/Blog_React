@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { ArticleSection } from "../../components/ArticleSection";
-import { Circles } from "react-loader-spinner";
-import './ArticlePage.css';
 import { Section } from "../../components/Section";
 import { SubscribePanel } from "../../components/SubscribePanel";
+
+import './ArticlePage.css';
 
 export const ArticlePage = () => {
     const [articleContent, setArticleContent] = useState<Array<{ type: string, src: string, thumbnail?: string }>>([]);

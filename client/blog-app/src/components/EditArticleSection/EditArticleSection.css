@@ -18,6 +18,7 @@
     padding: 0 150px;
     margin-bottom: 40px;
     font-size: 18px;
+    word-break: break-all;
 }
 
 .secondary-image {
@@ -38,19 +39,93 @@
 }
 
 .note {
-    max-width: 780px;
+    width: 780px;
     background-color: #EBF2FE;
     border-top: #1D54C0 solid 4px;
     border-radius: 8px;
+    word-break: break-all;
     margin-bottom: 40px;
 }
 
-.note p {
+.note p,
+.note .note-input {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
     padding: 50px;
     margin: 0;
     font-size: 22px;
     color: #232E52;
+}
+
+.note .note-input {
+    width: 680px;
+    background-color: #EBF2FE;
+}
+
+.note p {
+    width: 680px;
+}
+
+.note .buttons,
+.paragraph .buttons {
+    position: absolute;
+    bottom: -10px;
+    width: 780px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.paragraph .buttons {
+    width: 1000px;
+}
+
+.paragraph textarea {
+    padding: 0 150px;
+    max-width: 1000px;
+    width: 1000px;
+    border: 1px solid #232E52;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.add-secondary-image-container {
+    padding: 20px;
+    border: 1px solid #232E52;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.add-secondary-image-container .buttons {
+    display: flex;
+    column-gap: 20px;
+}
+
+.upload-wrapper {
+    visibility: hidden;
+}
+
+.image-info {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.image-info img {
+    cursor: pointer;
+}
+
+.secondary-image-thumbnail-input {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #232E52;
+    padding: 10px;
 }

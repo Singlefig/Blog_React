@@ -1,0 +1,57 @@
+.add-new-article-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 255px;
+}
+
+.article-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.add-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    position: relative;
+}
+
+.add-section-container hr {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #AF233E;
+    border: none;
+    top: 3px;
+}
+
+.add-article-section-button {
+    z-index: 2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 25px;
+    background-color: #AF233E;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    column-gap: 8px;
+    margin-bottom: auto;
+}
+
+.add-article-section-button span {
+    padding-top: 2px;
+}
+
+.hidden {
+    display: none;
+}

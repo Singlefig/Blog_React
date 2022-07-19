@@ -6,9 +6,15 @@ import axios from "axios";
 import { EditArticleSection } from "../../components/EditArticleSection";
 
 import './AddNewArticlePage.css';
+import { CreateArticleSection } from "../../components/CreateArticleSection";
 
 const AddNewArticlePage = () => {
-    const [articleData, setArticleData] = useState([]);
+    const [articleData, setArticleData] = useState<Array<{
+        type: string;
+        src: string;
+        thumbnail: string | undefined;
+    }>>([]);
+    const [selectedSection, setSelectedSection] = useState('');
     const userInfo = useSelector((state: { data: any }) => state);
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -28,13 +34,33 @@ const AddNewArticlePage = () => {
         }
     }, []);
 
+    const pushNewSection = (type: string, src: string, thumbnail?: string) => {
+        const temp = [...articleData];
+        const newSectionObj = { type: type, src: src, thumbnail: thumbnail };
+        temp.push(newSectionObj);
+        setArticleData([...temp]);
+    };
+
     return (
         <div className="add-new-article-page-container">
             <div className="article-container">
-                {articleData ? articleData.map((el: { type: string, src: string, thumbnail?: string }) => <EditArticleSection data={el} />) : null}
+                {articleData.length > 0 ? articleData.map((el: { type: string, src: string, thumbnail?: string }) => <EditArticleSection key={el.type + el.src} data={el} />) : null}
+                    <div className="add-section-container">
+                        {selectedSection ? (
+                                <EditArticleSection
+                                data={{ type: selectedSection, src: '' }}
+                                isEditMode
+                                pushNewSection={pushNewSection}
+                                setSelectedSection={setSelectedSection}
+                                />
+                            ) : (
+                                <CreateArticleSection setSelectedSection={setSelectedSection} />
+                            )
+                        }
+                    </div>
             </div>
         </div>
-        
+
     );
 };
 
