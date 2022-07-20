@@ -2,6 +2,10 @@ html {
   scroll-behavior:smooth;
 }
 
+body {
+  font-family: 'Avenir';
+}
+
 .App {
   padding: 30px;
   font-family: 'Avenir';
