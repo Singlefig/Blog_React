@@ -12,19 +12,26 @@ import { reorder } from "../../utils/reorder";
 import './AddNewArticlePage.css';
 import { CreateArticleSection } from "../../components/CreateArticleSection";
 import { Button } from "../../components/Button";
+import { toast } from "react-toastify";
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 const AddNewArticlePage = () => {
     const [articleData, setArticleData] = useState<Array<{
-        contentId: string | number,
+        contentId: string,
         type: string;
         src: string;
         thumbnail: string | undefined;
     }>>([]);
     const [selectedSection, setSelectedSection] = useState('');
     const [articleCategory, setArticleCategory] = useState('');
+    const [articleDate, setArticleDate] = useState('');
     const userInfo = useSelector((state: { data: any }) => state);
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
     useEffect(() => {
         if (userInfo && !userInfo.data.isLoggedIn) {
             navigate('/login');
@@ -34,6 +41,8 @@ const AddNewArticlePage = () => {
                 const getArticleContent = async () => {
                     const res = await axios.get(`http://localhost:4000/articles/${articleId}`);
                     setArticleData(res.data.content);
+                    setArticleCategory(res.data.category);
+                    setArticleDate(res.data.date);
                 };
 
                 getArticleContent();
@@ -48,6 +57,21 @@ const AddNewArticlePage = () => {
         setArticleData([...temp]);
     };
 
+    const deleteArticleSection = (id: number) => {
+        const newArtilcesData = articleData.filter((el: any) => el.contentId !== id);
+        if (newArtilcesData.length !== articleData.length) {
+            toast.success('Section deleted!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+        }
+        setArticleData([...newArtilcesData]);
+    };
+
     const onDragEnd = (result: any) => {
         if (!result.destination) {
             return;
@@ -60,6 +84,53 @@ const AddNewArticlePage = () => {
         );
 
         setArticleData([...items]);
+    };
+
+    const saveArticle = async () => {
+        const month = new Date().getMonth();
+        const day = new Date().getDay();
+        const year = new Date().getFullYear();
+        const date = `${monthNames[month]} ${day}, ${year}`;
+        const newArticleObject = {
+            userId: userInfo.data[0].id,
+            category: articleCategory,
+            date: date,
+            content: articleData,
+        };
+
+        const res = await axios.post('http://localhost:4000/articles', newArticleObject);
+        if (res.status === 201) {
+            toast.success('Success!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+        }
+    };
+
+    const updateArticle = async () => {
+        const articleId = searchParams.get('articleId');
+        const newArticleObject = {
+            userId: userInfo.data[0].id,
+            category: articleCategory,
+            date: articleDate,
+            content: articleData,
+        };
+
+        const res = await axios.patch(`http://localhost:4000/articles/${articleId}`, newArticleObject);
+        if (res.status === 201) {
+            toast.success('Success!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+        }
     };
 
     const getListStyle = (isDraggingOver: boolean) => ({
@@ -104,7 +175,14 @@ const AddNewArticlePage = () => {
                             fillColor="#3a4362"
                             textColor="#ffffff"
                             text="Add"
-                            onClick={() => console.log(articleCategory)}
+                            onClick={() => toast.success('Category added!', {
+                                position: "bottom-right",
+                                autoClose: 5000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                            })}
                             width="108px"
                             height="60px"
                         />
@@ -116,8 +194,8 @@ const AddNewArticlePage = () => {
                                 ref={provided.innerRef}
                                 style={getListStyle(snapshot.isDraggingOver)}
                             >
-                                {articleData.length > 0 ? articleData.map((el: { contentId: string | number, type: string, src: string, thumbnail?: string }, index) => (
-                                    <Draggable key={el.contentId} draggableId={el.src} index={index}>
+                                {articleData.length > 0 ? articleData.map((el: { contentId: string, type: string, src: string, thumbnail?: string }, index) => (
+                                    <Draggable key={el.contentId} draggableId={el.contentId} index={index}>
                                         {(provided, snapshot) => (
                                             <div
                                                 ref={provided.innerRef}
@@ -128,7 +206,7 @@ const AddNewArticlePage = () => {
                                                     provided.draggableProps.style
                                                 )}
                                             >
-                                                <EditArticleSection key={el.type + el.src} data={el} />
+                                                <EditArticleSection index={index} key={el.type + el.src} data={el} deleteArticleSection={deleteArticleSection} />
                                             </div>
                                         )}
                                     </Draggable>
@@ -140,7 +218,7 @@ const AddNewArticlePage = () => {
                     <div className="add-section-container">
                         {selectedSection ? (
                             <EditArticleSection
-                                data={{ type: selectedSection, src: '' }}
+                                data={{ type: selectedSection, src: '', contentId: uniqueId() }}
                                 isEditMode
                                 pushNewSection={pushNewSection}
                                 setSelectedSection={setSelectedSection}
@@ -152,6 +230,19 @@ const AddNewArticlePage = () => {
                     </div>
                 </div>
             </DragDropContext>
+            {articleData.length > 0 ? (
+                <div className="save-article">
+                    <Button
+                    fillColor="#3a4362"
+                    textColor="#ffffff"
+                    text={searchParams.get('articleId') ? "Update" : "Create"}
+                    onClick={searchParams.get('articleId') ? updateArticle : saveArticle}
+                    disabled={articleData.length === 0 || articleCategory.length === 0}
+                    width="140px"
+                    height="60px"
+                    />
+                </div>
+            ) : null}
         </div>
 
     );

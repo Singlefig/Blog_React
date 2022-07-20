@@ -7,8 +7,9 @@ import { Image } from "../Image";
 import './EditArticleSection.css';
 
 import pictureIcon from '../../assets/icons/image.svg';
+import trashIcon from '../../assets/icons/trash-icon.svg';
 
-export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelectedSection }: { data: { type: string, src: string, thumbnail?: string }, isEditMode?: boolean, pushNewSection?: Function, setSelectedSection?: any }) => {
+export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelectedSection, deleteArticleSection }: { data: { type: string, src: string, thumbnail?: string, contentId: string }, isEditMode?: boolean, pushNewSection?: Function, setSelectedSection?: any, deleteArticleSection?: any, index?: number }) => {
 
     const [quote, setQuote] = useState('');
     const [text, setText] = useState('');
@@ -22,6 +23,7 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
         imageName: '',
         thumbnail: '',
     });
+    const [isEditIconsDisplayed, setIsEditIconsDisplayed] = useState(false);
 
     const handleOnKeyPressSecondaryImage = (e: any, src: { imageName: string, thumbnail: string }) => {
         if (e.key === 'Enter' && pushNewSection) {
@@ -158,7 +160,24 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
                     </div>
                 </div>
             ) : (
-                component = <Image path={require('../../assets/images/' + data.src)} alt="Main article" width="100%" height="100%" />
+                component = (
+                    <div
+                        className="edit-section-hidden-icons-container-large"
+                        onMouseOver={() => setIsEditIconsDisplayed(true)}
+                        onMouseOut={() => setIsEditIconsDisplayed(false)}
+                    >
+                        <Image path={require('../../assets/images/' + data.src)} alt="Main article" width="100%" height="100%" />
+                        <img
+                            style={{ display: isEditIconsDisplayed ? 'block' : 'none' }}
+                            className="icon trash-icon"
+                            src={trashIcon}
+                            width={32}
+                            height={32}
+                            alt="trash"
+                            onClick={() => deleteArticleSection(data.contentId)}
+                        />
+                    </div>
+                )
             )
             return component;
         }
@@ -219,12 +238,28 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
                 </div>
             ) : (
                 component = (
-                    <div className="secondary-image">
-                        <Image path={require('../../assets/images/' + data.src)} alt="Secondary" width={780} height={490} />
-                        <span className="image-thumbnail">{data.thumbnail}</span>
+                    <div
+                        className="edit-section-hidden-icons-container"
+                        onMouseOver={() => setIsEditIconsDisplayed(true)}
+                        onMouseOut={() => setIsEditIconsDisplayed(false)}
+                    >
+                        <div className="secondary-image">
+                            <Image path={require('../../assets/images/' + data.src)} alt="Secondary" width={780} height={490} />
+                            <span className="image-thumbnail">{data.thumbnail}</span>
+                        </div>
+                        <img
+                            style={{ display: isEditIconsDisplayed ? 'block' : 'none' }}
+                            className="icon trash-icon"
+                            src={trashIcon}
+                            width={32}
+                            height={32}
+                            alt="trash"
+                            onClick={() => deleteArticleSection(data.contentId)}
+                        />
                     </div>
                 )
             )
+
             return component;
         }
         case 'text': {
@@ -258,9 +293,24 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
                             </div>
                         </div>
                     ) : (
-                        <p>
-                            {data.src}
-                        </p>
+                        <div
+                            className="edit-section-hidden-icons-container-text"
+                            onMouseOver={() => setIsEditIconsDisplayed(true)}
+                            onMouseOut={() => setIsEditIconsDisplayed(false)}
+                        >
+                            <p>
+                                {data.src}
+                            </p>
+                            <img
+                                style={{ display: isEditIconsDisplayed ? 'block' : 'none' }}
+                                className="icon trash-icon"
+                                src={trashIcon}
+                                width={32}
+                                height={32}
+                                alt="trash"
+                                onClick={() => deleteArticleSection(data.contentId)}
+                            />
+                        </div>
                     )}
                 </div>
             );
@@ -297,9 +347,24 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
                             </div>
                         </div>
                     ) : (
-                        <p>
-                            {data.src}
-                        </p>
+                        <div
+                            className="edit-section-hidden-icons-container"
+                            onMouseOver={() => setIsEditIconsDisplayed(true)}
+                            onMouseOut={() => setIsEditIconsDisplayed(false)}
+                        >
+                            <p>
+                                {data.src}
+                            </p>
+                            <img
+                                style={{ display: isEditIconsDisplayed ? 'block' : 'none' }}
+                                className="icon trash-icon"
+                                src={trashIcon}
+                                width={32}
+                                height={32}
+                                alt="trash"
+                                onClick={() => deleteArticleSection(data.contentId)}
+                            />
+                        </div>
                     )}
                 </div>
             );

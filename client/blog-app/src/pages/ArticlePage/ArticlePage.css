@@ -19,4 +19,18 @@
 
 .article-container .paragraph {
     max-width: 1000px;
+    width: 1000px;
+}
+
+.move-to-edit-article-section {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.move-to-edit-article-section p {
+    margin-right: 20px;
+    font-size: 20px;
 }

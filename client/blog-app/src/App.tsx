@@ -8,7 +8,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage/HomePage';
 import { LibraryPage } from './pages/LibraryPage/LibraryPage';
 import { CategoryPage } from './pages/CategoryPage/CategoryPage';
-import { ArticlePage } from './pages/ArticlePage/ArticlePage';
+import ArticlePage from './pages/ArticlePage/ArticlePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import AccountPage from './pages/AccountPage/AccountPage';
 import MyArticlesPage from './pages/MyArticlesPage/MyArticlesPage';

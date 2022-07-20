@@ -129,3 +129,46 @@
     border: 1px solid #232E52;
     padding: 10px;
 }
+
+.edit-section-hidden-icons-container-large,
+.edit-section-hidden-icons-container,
+.edit-section-hidden-icons-container-text {
+    position: relative;
+}
+
+.edit-section-hidden-icons-container-text {
+    width: 100%;
+}
+
+.edit-section-hidden-icons-container-text p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.edit-section-hidden-icons-container-large {
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0.7;
+}
+
+.edit-section-hidden-icons-container-large .trash-icon,
+.edit-section-hidden-icons-container .trash-icon {
+    top: 20px;
+    right: 30px;
+}
+
+.edit-section-hidden-icons-container-text .trash-icon {
+    top: 10px;
+    right: 70px;
+}
+
+.icon:hover {
+    opacity: 1;
+}

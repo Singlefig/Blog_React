@@ -5,10 +5,10 @@ import './ArticleSection.css';
 
 export const ArticleSection = ({ data }: { data: { type: string, src: string, thumbnail?: string } }) => {
     switch (data.type) {
-        case 'main image': {
+        case 'main picture': {
             return <Image path={require('../../assets/images/' + data.src)} alt="Main article" width="100%" height="100%" />
         }
-        case 'image': {
+        case 'picture': {
             return (
                 <div className="secondary-image">
                     <Image path={require('../../assets/images/' + data.src)} alt="Secondary" width={780} height={490} />

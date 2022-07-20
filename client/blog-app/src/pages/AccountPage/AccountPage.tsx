@@ -15,7 +15,6 @@ const AccountPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(userInfo);
         if (userInfo && !userInfo.data.isLoggedIn) {
             navigate('/login');
         }
