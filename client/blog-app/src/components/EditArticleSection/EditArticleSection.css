@@ -85,7 +85,9 @@
 .paragraph textarea {
     padding: 0 150px;
     max-width: 1000px;
+    z-index: 10;
     width: 1000px;
+    min-height: 200px;
     border: 1px solid #232E52;
     border-radius: 10px;
     padding: 10px;
@@ -156,6 +158,9 @@
     cursor: pointer;
     position: absolute;
     opacity: 0.7;
+    background-color: #232E52;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px 5px rgba(247, 247, 247, 0.2);
 }
 
 .edit-section-hidden-icons-container-large .trash-icon,
@@ -164,11 +169,29 @@
     right: 30px;
 }
 
+.edit-section-hidden-icons-container .edit-icon {
+    top: 20px;
+    right: 70px;
+}
+
+.edit-section-hidden-icons-container-text .edit-icon {
+    top: 10px;
+    right: 45px;
+}
+
 .edit-section-hidden-icons-container-text .trash-icon {
     top: 10px;
-    right: 70px;
+    right: 5px;
 }
 
 .icon:hover {
     opacity: 1;
+}
+
+.edit-input-section {
+    position: relative;
+}
+
+.edit-input-section .buttons {
+    bottom: -40px;
 }

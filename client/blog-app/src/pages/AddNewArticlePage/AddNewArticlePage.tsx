@@ -72,6 +72,13 @@ const AddNewArticlePage = () => {
         setArticleData([...newArtilcesData]);
     };
 
+    const updateArticleSection = (id: number, newValue: string) => {
+        const found = articleData.filter((el: { contentId: number | string, src: string }) => el.contentId === id);
+        if (found) {
+            found[0].src = newValue;
+        }
+    };
+
     const onDragEnd = (result: any) => {
         if (!result.destination) {
             return;
@@ -121,7 +128,7 @@ const AddNewArticlePage = () => {
         };
 
         const res = await axios.patch(`http://localhost:4000/articles/${articleId}`, newArticleObject);
-        if (res.status === 201) {
+        if (res.status === 200) {
             toast.success('Success!', {
                 position: "bottom-right",
                 autoClose: 5000,
@@ -206,7 +213,13 @@ const AddNewArticlePage = () => {
                                                     provided.draggableProps.style
                                                 )}
                                             >
-                                                <EditArticleSection index={index} key={el.type + el.src} data={el} deleteArticleSection={deleteArticleSection} />
+                                                <EditArticleSection
+                                                index={index}
+                                                key={el.type + el.src}
+                                                data={el}
+                                                deleteArticleSection={deleteArticleSection}
+                                                updateArticleSection={updateArticleSection}
+                                                />
                                             </div>
                                         )}
                                     </Draggable>
