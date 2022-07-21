@@ -12,7 +12,7 @@ import { reorder } from "../../utils/reorder";
 import './AddNewArticlePage.css';
 import { CreateArticleSection } from "../../components/CreateArticleSection";
 import { Button } from "../../components/Button";
-import { toast } from "react-toastify";
+import { getToast } from "../../utils/toast";
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -62,14 +62,7 @@ const AddNewArticlePage = () => {
     const deleteArticleSection = (id: number) => {
         const newArtilcesData = articleData.filter((el: any) => el.contentId !== id);
         if (newArtilcesData.length !== articleData.length) {
-            toast.success('Section deleted!', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('success', 'Section deleted!');
         }
         setArticleData([...newArtilcesData]);
     };
@@ -109,14 +102,7 @@ const AddNewArticlePage = () => {
 
         const res = await axios.post('http://localhost:4000/articles', newArticleObject);
         if (res.status === 201) {
-            toast.success('Success!', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('success', 'Success!');
         }
     };
 
@@ -131,14 +117,7 @@ const AddNewArticlePage = () => {
 
         const res = await axios.patch(`http://localhost:4000/articles/${articleId}`, newArticleObject);
         if (res.status === 200) {
-            toast.success('Success!', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('success', 'Success!');
         }
     };
 
@@ -184,14 +163,7 @@ const AddNewArticlePage = () => {
                             fillColor="#3a4362"
                             textColor="#ffffff"
                             text="Add"
-                            onClick={() => toast.success('Category added!', {
-                                position: "bottom-right",
-                                autoClose: 5000,
-                                hideProgressBar: false,
-                                closeOnClick: true,
-                                pauseOnHover: true,
-                                draggable: true,
-                            })}
+                            onClick={() => getToast('success', 'Category added!')}
                             width="108px"
                             height="60px"
                         />

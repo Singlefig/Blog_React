@@ -1,7 +1,7 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { toast } from 'react-toastify';
+import { getToast } from "../../utils/toast";
 import axios from "axios";
 import { Input } from "../../components/Input";
 
@@ -28,23 +28,9 @@ const AccountPage = () => {
             email: email,
         });
         if (result.status === 200) {
-            toast.success('Updated!', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('success', 'Updated!');
         } else {
-            toast.error('Something went wrong! Please, try again', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('error', 'Something went wrong! Please, try again');
         }
     };
 

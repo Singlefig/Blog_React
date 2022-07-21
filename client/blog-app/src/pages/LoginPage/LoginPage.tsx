@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import { getToast } from "../../utils/toast";
 import axios from "axios";
 import { Input } from "../../components/Input";
 import './LoginPage.css';
@@ -56,25 +56,10 @@ const LoginPage = () => {
                 payload: { data: { ...res.data, isLoggedIn: true } }
             });
 
-            toast.success('Successful login', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
-
+            getToast('success', 'Successful login');
             navigate('/');
         } else {
-            toast.error('Wrong email or password. Please try again', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('error', 'Wrong email or password. Please try again');
         }
         setLoginEmail('');
         setLoginPassword('');
@@ -106,26 +91,11 @@ const LoginPage = () => {
                     }
                 });
 
-                toast.success('Successful sign up', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
-
+                getToast('success', 'Successful sign up');
                 navigate('/');
             }
         } else {
-            toast.error('Current email is signed for existing account. Please try login or use another email', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('error', 'Current email is signed for existing account. Please try login or use another email');
         }
     };
 

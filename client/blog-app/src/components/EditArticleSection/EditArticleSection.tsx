@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Circles } from "react-loader-spinner";
-import { toast } from "react-toastify";
 import { Button } from "../Button";
 import { Image } from "../Image";
+import { getToast } from "../../utils/toast";
 
 import './EditArticleSection.css';
 
@@ -30,25 +30,11 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
     const handleOnKeyPressSecondaryImage = (e: any, src: { imageName: string, thumbnail: string }) => {
         if (e.key === 'Enter' && pushNewSection) {
             if (!src.imageName && !src.thumbnail) {
-                toast.warning('Please enter your thumbnail and upload an image!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                getToast('warning', 'Please enter your thumbnail and upload an image!');
             } else {
                 pushNewSection(data.type, src.imageName, src.thumbnail);
-                setImage(null)
-                toast.success('New section added!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                setImage(null);
+                getToast('success', 'New section added!');
             }
         } else if (e.key === 'Escape' && setSelectedSection) {
             setSelectedSection('');
@@ -59,25 +45,11 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
     const handleOnKeyPressImage = (e: any, src: File) => {
         if (e.key === 'Enter' && pushNewSection) {
             if (!src) {
-                toast.warning('Please enter your text or upload an image!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                getToast('warning', 'Please enter your thumbnail and upload an image!');
             } else {
                 pushNewSection(data.type, src.name);
-                setImage(null)
-                toast.success('New section added!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                setImage(null);
+                getToast('success', 'New section added!');
             }
         } else if (e.key === 'Escape' && setSelectedSection) {
             setSelectedSection('');
@@ -87,26 +59,12 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
     const handleOnKeyPress = (e: any, src: string) => {
         if (e.key === 'Enter' && pushNewSection) {
             if (src.length === 0) {
-                toast.warning('Please enter your text or upload an image!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                getToast('warning', 'Please enter your text or upload an image!');
             } else {
                 pushNewSection(data.type, src);
                 setQuote('');
                 setText('');
-                toast.success('New section added!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                getToast('success', 'New section added!');
             }
         } else if (e.key === 'Escape' && setSelectedSection) {
             setSelectedSection('');
@@ -116,25 +74,11 @@ export const EditArticleSection = ({ data, isEditMode, pushNewSection, setSelect
     const editTextSection = (e: any, src: string) => {
         if (e.key === 'Enter') {
             if (src.length === 0) {
-                toast.warning('Please enter your text!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                getToast('warning', 'Please enter your text!');
             } else {
                 updateArticleSection(data.contentId, src);
                 setIsEditInputDisplayed(false);
-                toast.success('Section updated!', {
-                    position: "bottom-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                });
+                getToast('success', 'Section updated!');
             }
         } else if (e.key === 'Escape') {
             setIsEditInputDisplayed(false);

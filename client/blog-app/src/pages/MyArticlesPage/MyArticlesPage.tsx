@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
-import { toast } from "react-toastify";
+import { getToast } from "../../utils/toast";
 
 import './MyArticlesPage.css';
 import { Button } from "../../components/Button";
@@ -31,14 +31,7 @@ const MyArticlesPage = () => {
         if (res.status === 200) {
             const articlesRes = await axios.get(`http://localhost:4000/articles/?userId=${userInfo.data[0].id}`);
             setArticles(articlesRes.data);
-            toast.success('Deleted!', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-            });
+            getToast('success', 'Deleted!');
         }
     };
 
