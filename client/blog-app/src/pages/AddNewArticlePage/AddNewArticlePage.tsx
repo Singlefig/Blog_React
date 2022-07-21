@@ -15,7 +15,7 @@ import { Button } from "../../components/Button";
 import { toast } from "react-toastify";
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+    "July", "August", "September", "October", "November", "December"
 ];
 
 const AddNewArticlePage = () => {
@@ -30,6 +30,7 @@ const AddNewArticlePage = () => {
     const [articleDate, setArticleDate] = useState('');
     const userInfo = useSelector((state: { data: any }) => state);
     const navigate = useNavigate();
+    // eslint-disable-next-line
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
@@ -48,6 +49,7 @@ const AddNewArticlePage = () => {
                 getArticleContent();
             }
         }
+        // eslint-disable-next-line
     }, []);
 
     const pushNewSection = (type: string, src: string, thumbnail?: string) => {
@@ -214,11 +216,11 @@ const AddNewArticlePage = () => {
                                                 )}
                                             >
                                                 <EditArticleSection
-                                                index={index}
-                                                key={el.type + el.src}
-                                                data={el}
-                                                deleteArticleSection={deleteArticleSection}
-                                                updateArticleSection={updateArticleSection}
+                                                    index={index}
+                                                    key={el.type + el.src}
+                                                    data={el}
+                                                    deleteArticleSection={deleteArticleSection}
+                                                    updateArticleSection={updateArticleSection}
                                                 />
                                             </div>
                                         )}
@@ -246,13 +248,13 @@ const AddNewArticlePage = () => {
             {articleData.length > 0 ? (
                 <div className="save-article">
                     <Button
-                    fillColor="#3a4362"
-                    textColor="#ffffff"
-                    text={searchParams.get('articleId') ? "Update" : "Create"}
-                    onClick={searchParams.get('articleId') ? updateArticle : saveArticle}
-                    disabled={articleData.length === 0 || articleCategory.length === 0}
-                    width="140px"
-                    height="60px"
+                        fillColor="#3a4362"
+                        textColor="#ffffff"
+                        text={searchParams.get('articleId') ? "Update" : "Create"}
+                        onClick={searchParams.get('articleId') ? updateArticle : saveArticle}
+                        disabled={articleData.length === 0 || articleCategory.length === 0}
+                        width="140px"
+                        height="60px"
                     />
                 </div>
             ) : null}
